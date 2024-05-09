@@ -11,6 +11,7 @@
     # pkgs.python311Packages.pip
     # pkgs.nodejs_20
     # pkgs.nodePackages.nodemon
+    pkgs.openssl.bin
   ];
 
   # Sets environment variables in the workspace
@@ -43,7 +44,7 @@
       # Runs when a workspace is first created
       onCreate = {
         # Example: install JS dependencies from NPM
-        npm-install = "npm i -g @nestjs/cli && npm i -g vite && npm install --prefix backend && npm install --prefix frontend";
+        npm-install = "npm install --prefix backend && npm install --prefix frontend";
       };
       onStart = {
         # Example: start a background task to watch and re-build backend code
